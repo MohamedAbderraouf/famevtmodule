@@ -1,0 +1,5 @@
+links.self
+attributes.threat_names
+attributes.total_votes
+attributes.title
+attributes.last_final_url

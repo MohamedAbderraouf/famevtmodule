@@ -1,0 +1,23 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">{{name}}</h4>
+            <p class="category">VirusTotal Analysis Results</p>
+        </div>
+        <div class="content">
+            {% if results %}
+                {% for link, data in results.items() %}
+                    <h5>Link: {{ link }}</h5>
+                    {% if data is string %}
+                        <p>{{ data }}</p>
+                    {% else %}
+                        <pre>{{ data | to_json(indent=4) }}</pre>
+                    {% endif %}
+                    <hr>
+                {% endfor %}
+            {% else %}
+                <p>No results to display.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
